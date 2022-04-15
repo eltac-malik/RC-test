@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+
+.cards
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+.card
+{
+  width: 250px;
+  height: 350px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img
+{
+  width: 200px;
+  margin-top: 5px;
+}
+
+.inp
+{
+  width: 600px;
+  height: 50px;
+  margin: 20px 0;
+}
+
+.card-title
+{
+  font-size: 20px;
+  font-weight: 600;
+}
