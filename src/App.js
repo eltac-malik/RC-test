@@ -1,12 +1,14 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Skeleton from './components/Skeleton';
 
 
 function App() {
 
   const [data, setData] = useState(undefined);
   const [PFinp,setPFInp] = useState("")
+
 
   useEffect((() => {
     axios.get("https://api.npoint.io/20c1afef1661881ddc9c")
@@ -24,7 +26,7 @@ function App() {
 
 
         <div className="cards">
-        {data == undefined ? console.log("404") :
+        {data === undefined ? <Skeleton/> :
         
         data.playerList.sort((x,y)=>
         {
@@ -44,11 +46,15 @@ function App() {
           return(
             
           <div key={i} className="card">
+          <div className="image">
           <img className="card-img-top" src={`../img/${e.Id}.jpg`} alt="Card image cap" />
+          </div>
           <div className="card-body">
             <p className="card-title">{e.PFName}</p>
-            <p className="card-text">{e.SkillDesc}</p>
-            <p className="card-text">{e.Value} Million $</p>
+            <p >{e.SkillDesc}</p>
+            <p >${e.Value} mln</p>
+            <p >{e.UpComingMatchesList[0].CCode} vs {e.UpComingMatchesList[0].VsCCode}</p>
+            <p >{e.UpComingMatchesList[0].MDate}</p>
           </div>
          </div>
           )
