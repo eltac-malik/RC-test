@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
 
-      <input className="inp" onChange={(e)=> setPFInp(e.target.value)} type="text"/>
+      <input className="inp" placeholder='Search' onChange={(e)=> setPFInp(e.target.value)} type="text"/>
 
 
         <div className="cards">
@@ -51,10 +51,22 @@ function App() {
           </div>
           <div className="card-body">
             <p className="card-title">{e.PFName}</p>
+            <div className="db-flex skill">
+            <p>Skill</p>
             <p >{e.SkillDesc}</p>
+            </div>
+            <div className="db-flex value">
+            <p>Value</p>
             <p >${e.Value} mln</p>
+            </div>
+            <div className="db-flex match-tm">
+            <p>Next Match</p>
             <p >{e.UpComingMatchesList[0].CCode} vs {e.UpComingMatchesList[0].VsCCode}</p>
+            </div>
+            <div className="db-flex date">
+            <p>Match Date</p>
             <p >{e.UpComingMatchesList[0].MDate}</p>
+            </div>
           </div>
          </div>
           )

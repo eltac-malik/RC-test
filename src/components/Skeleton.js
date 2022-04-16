@@ -1,8 +1,13 @@
 import React from 'react'
+import "./Skeleton.css"
 
 function Skeleton() {
   return (
-    <div>Skeleton</div>
+    <div className='skelet'>
+      
+      <div className="loader"></div>
+
+    </div>
   )
 }
 
